@@ -5,18 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" , initial-scale="1.0">
     <title>Date Layer Test</title>
-    <!-- Smart Data Protector -->
-    <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
-    <script type="application/javascript"
-        src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
-    <script>
-        uc.deactivateBlocking([
-            'HkocEodjb7', // Google Analytics is not blocked
-            'HyEX5Nidi-m', // Vimeo is not blocked
-            'ko1w5PpFl' // Facebook Pixel is not blocked
-        ]);
-    </script>
-    <!-- End Smart Data Protector -->
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -27,17 +15,6 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-KHX59ST');</script>
     <!-- End Google Tag Manager -->
-    <script type="text/plain" data-usercentrics="Vimeo">{
-            console.log("Vimeo launched");
-            let iframe = document.createElement('iframe');
-            let vimeoWrapper = document.getElementById("vimeo-wrapper")
-            let vimeoInside = document.getElementById("vimeo-wrapper-inside").style.display="none";
-            iframe.src = "https://player.vimeo.com/video/40409289";
-            iframe.style.width = "640px";
-            iframe.style.height = "360px";
-            vimeoWrapper.appendChild(iframe);
-        }
-    </script>
     <script>
         window.addEventListener("uc_consent", function (e) {
             if (e.data.event == "consent_changed Vimeo") {
@@ -107,7 +84,7 @@
     <script class="podigee-podcast-player"
         src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js"
         data-configuration="https://feed-dive.podigee.io/5-was-macht-ein-podcast-hoster-eigentlich/embed?context=external"></script>
-    <h2>Vimeo Video - excluded from SDP</h2>
+    <h2>Vimeo Video (excluded from SDP)</h2>
     <div id=vimeo-wrapper>
         <div id=vimeo-wrapper-inside
             style="width:420px;height:261px;border-radius:1px;box-shadow:  rgba(0, 0, 0, 0.5) 0px 3px 6px 0px;">
