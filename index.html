@@ -38,6 +38,29 @@
             vimeoWrapper.appendChild(iframe);
         }
     </script>
+    <script>
+        window.addEventListener("uc_consent", function (e) {
+            if (e.data.event == "consent_changed Vimeo") {
+                let vimeoInside = document.getElementById("vimeo-wrapper-inside");
+                let vimeoWrapper = document.getElementById("vimeo-wrapper")
+                if (usercentrics.getConsents('HyEX5Nidi-m').consentStatus === true) {
+                    console.log("Consent for Vimeo was given")
+                    let iframe = document.createElement('iframe');
+                    iframe.id = "Vimeo_iframe";
+                    vimeoInside.style.display = "none";
+                    iframe.src = "https://player.vimeo.com/video/40409289";
+                    iframe.style.width = "640px";
+                    iframe.style.height = "360px";
+                    vimeoWrapper.appendChild(iframe);
+                }
+                else {
+                    console.log("Consent was revoked")
+                    vimeoInside.style.display = "block";
+                    vimeoWrapper.removeChild(document.getElementById("Vimeo_iframe"));
+                }
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -84,7 +107,7 @@
     <script class="podigee-podcast-player"
         src="https://cdn.podigee.com/podcast-player/javascripts/podigee-podcast-player.js"
         data-configuration="https://feed-dive.podigee.io/5-was-macht-ein-podcast-hoster-eigentlich/embed?context=external"></script>
-    <h2>Vimeo Video (excluded from SDP)</h2>
+    <h2>Vimeo Video - excluded from SDP</h2>
     <div id=vimeo-wrapper>
         <div id=vimeo-wrapper-inside
             style="width:420px;height:261px;border-radius:1px;box-shadow:  rgba(0, 0, 0, 0.5) 0px 3px 6px 0px;">
@@ -102,8 +125,8 @@
             <button onclick="usercentrics.updateConsents([{'templateId':'HyEX5Nidi-m', 'status':true}])"
                 style="font-size: 16px;font-weight: bold;display: inline-block;height: 40px;padding-top: 10px;letter-spacing: 1.2;padding-left: 25px;padding-right: 25px;margin-bottom: 15px;background: #0096ff;color: #fff;border-radius:4px;border-color:#fff">Akzeptieren</button>
         </div>
-
     </div>
+
 </body>
 
 </html>
