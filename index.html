@@ -15,6 +15,18 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-KHX59ST');</script>
     <!-- End Google Tag Manager -->
+    <!-- Smart Data Protector -->
+    <meta data-privacy-proxy-server="https://privacy-proxy-server.usercentrics.eu">
+    <script type="application/javascript"
+        src="https://privacy-proxy.usercentrics.eu/latest/uc-block.bundle.js"></script>
+    <script>
+        uc.deactivateBlocking([
+            'HkocEodjb7', // Google Analytics is not blocked
+            'HyEX5Nidi-m', // Vimeo is not blocked
+            'ko1w5PpFl' // Facebook Pixel is not blocked
+        ]);
+    </script>
+    <!-- End Smart Data Protector -->
     <script>
         window.addEventListener("uc_consent", function (e) {
             if (e.data.event == "consent_changed Vimeo") {
